@@ -23,7 +23,7 @@ import time
 import random
 
 #define the board
-board = [" "," "," "," "," "," "," "," "," "," ",]
+board = [""," "," "," "," "," "," "," "," "," ",]
 
 #print the header
 def print_header():
@@ -75,6 +75,23 @@ while True:
 		print "X Wins! Congratulations"
 		break
 
+	#check for a tie (if board is full)
+	isFull = True
+	if " " in board:
+		isFull = False
+
+	#If the board is full, do something
+	if isFull == True:
+		print "Tie!"
+		break	
+
+
+
+#	for index in range(1, 10):
+#		if board[index] == " ":
+#			isFull = False
+#			break
+
 	os.system("clear")
 	print_header()
 	print_board()
@@ -90,7 +107,7 @@ while True:
 		print "Sorry, that space is taken!"
 		time.sleep(1)
 
-	#check for X win
+	#check for O win
 	if (board[1] == "O" and board[2] == "O" and board[3] == "O") or\
 	 	(board[4] == "O" and board[5] == "O" and board[6] == "O") or\
 		(board[7] == "O" and board[8] == "O" and board[9] == "O") or\
